@@ -12,6 +12,7 @@ app.use(express.json());
 app.use('/products', productRouter);
 app.use('/users', userRouter);
 
+console.log("Conectando a la base de datos en:", process.env.DATABASE_URL);
 mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

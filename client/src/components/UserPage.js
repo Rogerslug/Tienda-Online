@@ -1,7 +1,12 @@
 import React from 'react';
 
 function UserPage() {
-  return <h1>Esta es la página de usuario</h1>;
+  return (
+    <main>
+        <h2>Esta es la página de usuario</h2>
+        <p>Aquí se mostrarán todos los usuarios registrados</p>
+    </main>
+  ) 
 }
 
 export default UserPage;

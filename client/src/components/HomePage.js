@@ -1,7 +1,12 @@
 import React from 'react';
 
 function HomePage() {
-  return <h1>Esta es la página de inicio</h1>;
+    return (
+        <main>
+        <h2>¡Bienvenido a nuestra tienda online!</h2>
+        <p>Aquí puedes encontrar una gran variedad de productos a los mejores precios</p>
+        </main>
+    );
 }
 
 export default HomePage;
