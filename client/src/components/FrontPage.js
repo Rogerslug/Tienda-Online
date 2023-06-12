@@ -39,7 +39,7 @@ useEffect(() => {
         ))}
       </div>
     </div>
-  );
+  );    
 }
 
 export default FrontPage;
