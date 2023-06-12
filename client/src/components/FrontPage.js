@@ -34,7 +34,7 @@ useEffect(() => {
                 <p className="product-category">Categoría: {product.categoria}</p>
                 <p>Stock: {product.stock}</p>
                 <p>Distribuidor: {product.distribuidor}</p>
-                <button inClick={() => add(product, product.precio)}>Añadir al carrito</button>                
+                <button onClick={() => add(product, product.precio)}>Añadir al carrito</button>                
             </div>
         ))}
       </div>
