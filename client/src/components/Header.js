@@ -10,6 +10,7 @@ const Header = () => {
                 <li><Link to="/">Inicio</Link></li>
                 <li><Link to="/products">Productos</Link></li>
                 <li><Link to="/users">Usuarios</Link></li>
+                <li><Link to="/fermented">Productos Fermentados</Link></li> {/* Este es el nuevo enlace */}
                 </ul>
             </nav>
         </header>
