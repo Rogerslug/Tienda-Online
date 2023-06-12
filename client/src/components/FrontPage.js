@@ -13,7 +13,7 @@ function FrontPage() {
 
     const getProducts = async () => {
         const res = await axios.get('http://localhost:5000/products');
-        //Colocar aquí lógica para mostrar productos en página
+        setProducts(res.data);
     };
 
 useEffect(() => {
@@ -27,7 +27,16 @@ useEffect(() => {
         <button id="checkout" onClick={() => console.log('Implementar la función de pago')}>Pagar</button>
       </header>
       <div id="page-content">
-        {/* Aquí necesitas implementar la función para mostrar los productos */}
+        {products.map((product, index) => (
+            <div key={index} className='product'>
+                <img src={product.imagen} alt={product.nombre} />
+                <h2>{product.imagen}</h2>
+                <p>Categoría: {product.categoria}</p>
+                <p>Stock: {product.stock}</p>
+                <p>Distribuidor: {product.distribuidor}</p>
+                <button inClick={() => add(product, product.precio)}>Añadir al carrito</button>                
+            </div>
+        ))}
       </div>
     </div>
   );
