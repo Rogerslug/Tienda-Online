@@ -18,36 +18,14 @@ router.get('/', authenticateToken, async (res) => {
 router.get('/:id', authenticateToken, getUser, (res) => {
   res.json(res.user);
 });
- 
 
-// Registrar un usuario
-router.post('/', async (req, res) => {
-    //Cifrado de contraseña
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
-
-    const user = new User({
-        username: req.body.username,
-        password: hashedPassword,
-        isAdmin: req.body.isAdmin,
-    });
-
-    try {
-        const newUser = await this.user.save();
-        res.status(201).json(newUser);
-    } catch (err) {
-        res.status(400).json({ message: err.message});
-    }
-});
-
-
-/*
-// Crear un usuario ||Redundante con la ruta de arriba||
+// Crear un usuario
 router.post('/', async (req, res) => {
   const user = new User({
     nombre: req.body.nombre,
     email: req.body.email,
     contraseña: req.body.contraseña,
-  });                                
+  });
 
   try {
     const newUser = await user.save();
@@ -56,7 +34,6 @@ router.post('/', async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
-*/
 
 
 // Inicio de sesión
@@ -77,6 +54,25 @@ router.post('/login', async (req, res) => {
         res.json({ token });
     } catch (err) {
         res.status(500).json({ message: err.message});
+    }
+});
+
+// Regiostrar un usuario
+router.post('/', async (req, res) => {
+    //Cifrado de contraseña
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+
+    const user = new User({
+        username: req.body.username,
+        password: hashedPassword,
+        isAdmin: req.body.isAdmin,
+    });
+
+    try {
+        const newUser = await this.user.save();
+        res.status(201).json(newUser);
+    } catch (err) {
+        res.status(400).json({ message: err.message});
     }
 });
 
