@@ -13,7 +13,7 @@ function FrontPage() {
 
     const getProducts = async () => {
         const res = await axios.get('http://localhost:5000/products');
-        setProducts(res.data);
+        //Colocar aquí lógica para mostrar productos en página
     };
 
 useEffect(() => {
@@ -31,10 +31,10 @@ useEffect(() => {
             <div key={index} className='product'>
                 <img src={product.imagen} alt={product.nombre} />
                 <h2>{product.imagen}</h2>
-                <p className="product-category">Categoría: {product.categoria}</p>
+                <p>Categoría: {product.categoria}</p>
                 <p>Stock: {product.stock}</p>
                 <p>Distribuidor: {product.distribuidor}</p>
-                <button onClick={() => add(product, product.precio)}>Añadir al carrito</button>                
+                <button inClick={() => add(product, product.precio)}>Añadir al carrito</button>                
             </div>
         ))}
       </div>
