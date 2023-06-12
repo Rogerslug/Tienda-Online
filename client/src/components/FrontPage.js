@@ -31,7 +31,7 @@ useEffect(() => {
             <div key={index} className='product'>
                 <img src={product.imagen} alt={product.nombre} />
                 <h2>{product.imagen}</h2>
-                <p>Categoría: {product.categoria}</p>
+                <p className="product-category">Categoría: {product.categoria}</p>
                 <p>Stock: {product.stock}</p>
                 <p>Distribuidor: {product.distribuidor}</p>
                 <button inClick={() => add(product, product.precio)}>Añadir al carrito</button>                
